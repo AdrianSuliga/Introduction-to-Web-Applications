@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+
+p {
+    color: rgb(129, 23, 23);
+}
+
+header {
+    background-color: rgb(139, 128, 128);
+    padding: 3em;
+    text-align: center;
+    color: black;
+}
+
+nav {
+    background-color: rgb(77, 68, 68);
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    width: 30%;
+    float: left;
+}
+
+main {
+    background-color: rgb(214, 238, 183);
+    padding: 20px;
+    width: 70%;
+    float: right;
+}
+
+main::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+footer {
+    background-color: rgb(80, 8, 8);
+    padding: 2em;
+    text-align: center;
+    color: black;
+}
