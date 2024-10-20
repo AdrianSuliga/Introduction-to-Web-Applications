@@ -1,0 +1,15 @@
+@font-face {
+    font-family: stdFont;
+    src: url(../resources/fonts/monoMMM_5.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: stdFont;
+}
+
+body {
+    background-color: black;
+}
