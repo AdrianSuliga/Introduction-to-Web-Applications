@@ -1,8 +1,5 @@
 :root {
     --my_white: rgb(210, 210, 210);
-    --my_gray: rgb(38, 38, 38);
-    --my_light_gray: rgb(50, 50, 50);
-    --my_red: rgb(150, 0, 20);
 }
 
 section {
@@ -43,9 +40,10 @@ section {
 }
 
 #hero_title {
-    font-size: 80px;
+    font-size: 4vw;
+
 }
 
 #hero_subtitle {
-    font-size: 30px;
+    font-size: 1.5vw;
 }

@@ -1,0 +1,16 @@
+:root {
+    --my_white: rgb(210, 210, 210);
+    --my_gray: rgb(38, 38, 38);
+    --my_light_gray: rgb(50, 50, 50);
+    --my_red: rgb(150, 0, 20);
+}
+
+article {
+    margin-top: 80px;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: var(--my_gray);
+    color: var(--my_white);
+    text-align: justify;
+}
