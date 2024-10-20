@@ -1,0 +1,51 @@
+:root {
+    --my_white: rgb(210, 210, 210);
+    --my_gray: rgb(38, 38, 38);
+    --my_light_gray: rgb(50, 50, 50);
+    --my_red: rgb(150, 0, 20);
+}
+
+section {
+    background-image: url(../resources/images/main_background.png);
+    opacity: 1.0;
+    color: var(--my_white);
+    height: calc(100vh - 96px);
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero_upper {
+    height: 40%;
+}
+
+#hero_bottom {
+    height: 33%;
+}
+
+#hero_wrapper {
+    display: flex;
+}
+
+#hero_div {
+    height: 34%;
+    width: 25%;
+    text-align: center;
+}
+
+#hero_left {
+    width: 5%;
+}
+
+#hero_right {
+    width: 70%;
+}
+
+#hero_title {
+    font-size: 80px;
+}
+
+#hero_subtitle {
+    font-size: 30px;
+}
