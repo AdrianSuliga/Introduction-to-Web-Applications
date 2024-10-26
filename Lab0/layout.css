@@ -17,6 +17,7 @@ p {
 }
 
 h1 {
+    font-size: 3vw;
     margin: 0;
 }
 
@@ -26,20 +27,37 @@ h3 {
 }
 
 a:link {
-    color: rgb(20, 20, 255);
-}
-
-a:visited {
-    color: rgb(200, 90, 200);
-}
-
-a:hover {
-    color: rgb(100, 100, 255);
-}
-
-a {
+    text-decoration: none;
     font-size: larger;
-    color: rgb(20, 20, 255);
+    font-size: 1.5vw;
+}
+
+li {
+    font-size: 1.5vw;
+}
+
+#ex1_link, #ex1_list_item {
+    color: rgb(0, 255, 0);
+}
+
+#ex1_link:hover {
+    border-bottom: 1px solid rgb(0, 255, 0);
+}
+
+#ex2_link, #ex2_list_item {
+    color: rgb(0, 102, 255);
+}
+
+#ex2_link:hover {
+    border-bottom: 1px solid rgb(0, 102, 255);;
+}
+
+#ex3_link, #ex3_list_item {
+    color: rgb(255, 0, 255);
+}
+
+#ex3_link:hover {
+    border-bottom: 1px solid rgb(255, 0, 255);
 }
 
 img {

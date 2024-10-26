@@ -1,6 +1,8 @@
 .square {
     width: 100px;
+    min-width: 100px;
     height: 100px;
+    min-height: 100px;
     margin: 5px;
 }
 
@@ -14,11 +16,11 @@ body {
 }
 
 #sq1 {
-    background-color: black;
+    background-color: rgb(255, 0, 255);
 }
 
 #sq2 {
-    background-color: grey;
+    background-color: rgb(255, 0, 150);
 }
 
 #sq_container_2 {
@@ -26,13 +28,9 @@ body {
 }
 
 #sq3 {
-    background-color: green;
+    background-color: rgb(255, 0, 50);
 }
 
 #sq4 {
-    background-color: red;
-}
-
-#sq5 {
-    background-color: purple;
+    background-color: rgb(255, 0, 0);
 }
