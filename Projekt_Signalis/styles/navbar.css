@@ -28,6 +28,7 @@ header {
 }
 
 .nav_bar_link {
+    font-size: 1vw;
     text-decoration: none;
     padding: 10px;
 }
