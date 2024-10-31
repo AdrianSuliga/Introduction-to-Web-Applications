@@ -6,7 +6,7 @@ section {
     background-image: url(../resources/images/main_background.png);
     opacity: 1.0;
     color: var(--my_white);
-    height: calc(100vh - 96px);
+    height: 90vh;
     background-size: cover;
     background-position: center;
     justify-content: center;
@@ -23,9 +23,9 @@ section {
 }
 
 #hero_title {
-    font-size: 4vw;
+    font-size: 5vw;
 }
 
 #hero_subtitle {
-    font-size: 1.5vw;
+    font-size: 1.75vw;
 }

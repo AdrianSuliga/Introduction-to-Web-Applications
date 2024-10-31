@@ -12,15 +12,14 @@ header {
     align-items: center;
     justify-content: center;
     gap: 30px;
+    height: 10vh;
 }
 
-#nav_bar_img {
-    width: 5%;
-    height: 5%;
-    padding: 10px;
+.nav_bar_img {
+    height: 80%;
 }
 
-#nav_bar_ul {
+.nav_bar_ul {
     list-style-type: none;
     display: flex;
     padding: 10px;
@@ -33,14 +32,14 @@ header {
     padding: 10px;
 }
 
-.nav_bar_link:link, :visited{
+.nav_bar_link:link, .nav_bar_link:visited {
     color: var(--my_white);
 }
 
 .nav_bar_link:hover {
-    background-color: var(--my_light_gray);
-    border-radius: 5px;
-    box-shadow: -1px 1px 1px 1px var(--my_red);
+    background-color: rgb(33, 33, 33);
+    border-bottom: 0.2vw solid var(--my_red);
+    border-radius: 0.4vw;
 }
 
 .nav_bar_link:active {
