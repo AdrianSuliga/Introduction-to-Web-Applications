@@ -8,7 +8,7 @@ article {
     color: var(--my_white);
     text-align: justify;
     border-radius: 1vw;
-    font-size: 1vw;
+    font-size: 20px;
 }
 
 .paragraph_wrapper {
@@ -24,7 +24,7 @@ article {
     text-align: left;
     border-bottom: 5px solid var(--my_red);
     padding: 1vw;
-    font-size: 2vw;
+    font-size: 40px;
 }
 
 .article_paragraph {
@@ -64,7 +64,7 @@ article {
 }
 
 .article_figcaption {
-    font-size: 1vw;
+    font-size: 20px;
     text-align: center;
     border-bottom: 5px solid var(--my_red);
 }
@@ -72,4 +72,29 @@ article {
 .article_image {
     width: 100%;
     height: auto;
+}
+
+@media only screen and (orientation: portrait) {
+    article {
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+    }
+
+    .paragraph_wrapper {
+        flex-direction: column;
+    }
+
+    .paragraph_container {
+        width: 100%;
+    }
+
+    .photo_container {
+        width: 100%;
+    }
+
+    .article_figure {
+        margin: 0% 10% 10% 10%;
+        padding: 20px;
+    }
 }
