@@ -1,7 +1,3 @@
-:root {
-    --my_white: rgb(210, 210, 210);
-}
-
 section {
     background-image: url(../resources/images/main_background.png);
     opacity: 1.0;

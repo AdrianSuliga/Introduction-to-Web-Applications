@@ -3,6 +3,13 @@
     src: url(../resources/fonts/monoMMM_5.ttf);
 }
 
+:root {
+    --my_white: rgb(210, 210, 210);
+    --my_gray: rgb(38, 38, 38);
+    --my_dark: rgb(10, 10, 10);
+    --my_red: rgb(150, 0, 20);
+}
+
 * {
     margin: 0;
     padding: 0;

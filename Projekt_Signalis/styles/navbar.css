@@ -1,10 +1,3 @@
-:root {
-    --my_white: rgb(210, 210, 210);
-    --my_gray: rgb(38, 38, 38);
-    --my_light_gray: rgb(50, 50, 50);
-    --my_red: rgb(150, 0, 20);
-}
-
 header {
     font-family: stdFont;
     background-color: var(--my_gray);
