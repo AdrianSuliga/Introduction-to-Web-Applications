@@ -1,9 +1,10 @@
-header {
+nav {
     font-family: stdFont;
     background-color: var(--my_gray);
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     gap: 30px;
     height: 10vh;
 }
@@ -12,16 +13,12 @@ header {
     height: 80%;
 }
 
-.nav_bar_ul {
-    list-style-type: none;
-    display: flex;
-    padding: 10px;
-    gap: 50px;
-}
-
 .nav_bar_link {
-    font-size: 1vw;
+    max-width: 20%;
+    max-height: 80%;
+    font-size: 20px;
     text-decoration: none;
+    text-wrap: nowrap;
     padding: 10px;
 }
 
@@ -31,10 +28,78 @@ header {
 
 .nav_bar_link:hover {
     background-color: rgb(33, 33, 33);
-    border-bottom: 0.2vw solid var(--my_red);
-    border-radius: 0.4vw;
+    border-bottom: 3px solid var(--my_red);
+    border-radius: 5px;
 }
 
 .nav_bar_link:active {
     background-color: rgb(60, 60, 60);
+}
+
+.menu_hidden {
+    display: none;
+}
+
+@media screen and (orientation: portrait) {
+    .navbar {
+        justify-content: space-between;
+    }
+
+    #home_link {
+        display: block;
+    }
+
+    .nav_bar_img, .nav_bar_link {
+        display: none;
+    }
+
+    .menu_top_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 10vh;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .menu_hidden {
+        display: block;
+        height: 80%;
+        width: 10%;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    .navbar_responsive {
+        flex-direction: column;
+        height: auto;
+        align-items: start;
+        padding: 10px;
+    }
+
+    .nav_bar_link_responsive {
+        display: block;
+        height: 10vh;
+        max-width: 100%;
+        width: 30%;
+        padding: 10px;
+        font-size: 24px;
+        text-align: left;
+        align-content: center;
+        text-decoration: none;
+        color: var(--my_white);
+    }
+
+    .nav_bar_link_responsive:hover {
+        border-bottom: 3px solid var(--my_red);
+        border-radius: 5px;
+    }
+
+    .menu_top_container_responsive {
+        padding: 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
 }

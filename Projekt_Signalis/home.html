@@ -13,28 +13,39 @@
     />
     <meta name="author" , content="Adrian Suliga" />
     <title>SIGNALIS · Introduction</title>
-    <link rel="stylesheet" href="styles/navbar.css" />
     <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/navbar.css" />
     <link rel="stylesheet" href="styles/hero_section.css" />
     <link rel="stylesheet" href="styles/article.css" />
     <link rel="stylesheet" href="styles/footer.css" />
     <link rel="icon" type="image/x-icon" href="resources/icons/favicon.png" />
+    <script src="scripts/menu_responsive.js"></script>
   </head>
   <body>
     <header>
-      <img
-        src="resources/icons/game_logo.png"
-        class="nav_bar_img"
-        alt="Game Logo, a hexagon with complicated pattern"
-      />
-      <nav>
-        <ul class="nav_bar_ul">
-          <li><a href="home.html" class="nav_bar_link">Home</a></li>
-          <li><a href="replika.html" class="nav_bar_link">Replika Units</a></li>
-          <li><a href="planets.html" class="nav_bar_link">Planets</a></li>
-          <li><a href="gallery.html" class="nav_bar_link">Gallery</a></li>
-          <li><a href="contact.html" class="nav_bar_link">Contact</a></li>
-        </ul>
+      <nav class="navbar">
+        <img
+          src="resources/icons/game_logo.png"
+          class="nav_bar_img"
+          alt="Game Logo, a hexagon with complicated pattern"
+        />
+        <div class="menu_top_container">
+          <a href="home.html" class="nav_bar_link" id="home_link">Home</a>
+          <img
+            class="menu_hidden"
+            onclick="menuToggle()"
+            src="resources/icons/navbar_hidden.png"
+          />
+        </div>
+        <a href="replika.html" class="nav_bar_link">Replika Units</a>
+        <a href="planets.html" class="nav_bar_link">Planets</a>
+        <a href="gallery.html" class="nav_bar_link">Gallery</a>
+        <a href="contact.html" class="nav_bar_link">Contact</a>
+        <img
+          src="resources/icons/game_logo.png"
+          class="nav_bar_img"
+          alt="Game Logo, a hexagon with complicated pattern"
+        />
       </nav>
     </header>
     <main>

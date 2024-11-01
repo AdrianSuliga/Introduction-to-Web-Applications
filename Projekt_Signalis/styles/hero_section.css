@@ -1,10 +1,7 @@
 section {
-    background-image: url(../resources/images/main_background.png);
     opacity: 1.0;
     color: var(--my_white);
     height: 90vh;
-    background-size: cover;
-    background-position: center;
     justify-content: center;
     align-items: center;
 }
@@ -14,8 +11,8 @@ section {
     height: 100%;
     text-align: center;
     position: relative;
-    top: 35%;
-    right: 30%;
+    top: 33%;
+    right: 33%;
 }
 
 #hero_title {
@@ -24,4 +21,21 @@ section {
 
 #hero_subtitle {
     font-size: 1.75vw;
+}
+
+@media only screen and (orientation: portrait) {
+    #hero_div {
+        position: relative;
+        top: 40%;
+        left: 0%;
+        
+    }
+
+    #hero_title {
+        font-size: 80px;
+    }
+    
+    #hero_subtitle {
+        font-size: 30px;
+    }
 }
