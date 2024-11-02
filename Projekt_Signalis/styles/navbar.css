@@ -47,6 +47,7 @@ nav {
 
     #home_link {
         display: block;
+        font-size: 24px;
     }
 
     .nav_bar_img, .nav_bar_link {
