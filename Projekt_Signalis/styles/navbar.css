@@ -40,7 +40,7 @@ nav {
     display: none;
 }
 
-@media screen and (orientation: portrait) {
+@media screen and (max-width: 900px) {
     .navbar {
         justify-content: space-between;
     }
@@ -70,7 +70,7 @@ nav {
     }
 }
 
-@media screen and (orientation: portrait) {
+@media screen and (max-width: 1000px) {
     .navbar_responsive {
         flex-direction: column;
         height: auto;
@@ -104,3 +104,4 @@ nav {
         width: 100%;
     }
 }
+

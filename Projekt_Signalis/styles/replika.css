@@ -75,6 +75,93 @@ article {
 
 .replika_figcaption {
     overflow: hidden;
-    font-size: 16px;
+    font-size: 20px;
     text-align: center;
+}
+
+.falke_container {
+    display: flex;
+    padding: 4vw;
+    gap: 2vw;
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+}
+
+.falke_text h1 {
+    text-align: left;
+    border-bottom: 5px solid var(--my_red);
+    font-size: 30px;
+    padding: 1vw;
+}
+
+.falke_text p {
+    padding: 1vw;
+}
+
+.falke_text {
+    width: 70%;
+}
+
+.falke_photo {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1000px) {
+    .grid_container {
+        grid-template-columns: auto;
+    }
+
+    .falke_container {
+        margin-left: 0%;
+        margin-right: 0%;
+        width: 100%;
+        padding: 2vw;
+    }
+
+    .falke_photo {
+        width: 35%;
+    }
+
+    .falke_text {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .grid_item {
+        flex-direction: column;
+    }
+
+    .grid_item_text {
+        width: 100%;
+    }
+
+    .grid_item_photos {
+        width: 100%;
+        gap: 20px;
+    }
+
+    .replika_figure {
+        margin: 10%;
+    }
+
+    .replika_figcaption {
+        font-size: 24px;
+    }
+
+    .falke_container {
+        flex-direction: column;
+    }
+
+    .falke_text {
+        width: 100%;
+    }
+
+    .falke_photo {
+        width: 100%;
+    }
 }
