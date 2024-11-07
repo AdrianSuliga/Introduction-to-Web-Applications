@@ -27,7 +27,7 @@ nav {
 }
 
 .nav_bar_link:hover {
-    background-color: rgb(33, 33, 33);
+    background-color: var(--my_dark);
     border-bottom: 3px solid var(--my_red);
     border-radius: 5px;
 }
