@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="generator.css" />
+    <script src="generator.js"></script>
+  </head>
+  <body>
+    <form id="password_form">
+      <label for="minLen">Podaj minimalną długość hasła</label><br />
+      <input type="text" name="minLen" id="minLen" /><br />
+      <label for="maxLen">Podaj maksymalną długość hasła</label><br />
+      <input type="text" name="maxLen" id="maxLen" /><br />
+      <label for="largeLetters">Czy hasło ma zawierać wielkie litery?</label>
+      <input
+        type="checkbox"
+        name="largeLetters"
+        id="largeLetters"
+        value="Yes"
+      />
+      <label for="largeLetters">Tak</label><br />
+      <label for="specialLetters">Czy hasło ma zawierać znaki specjalne?</label>
+      <input
+        type="checkbox"
+        name="specialLetters"
+        id="specialLetters"
+        value="Yes"
+      />
+      <label for="specialLetters">Tak</label><br />
+      <input
+        type="submit"
+        name="submitForm"
+        id="submitForm"
+        value="Generate password"
+        onclick="generatePassword()"
+      />
+    </form>
+  </body>
+</html>
