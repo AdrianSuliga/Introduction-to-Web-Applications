@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>API Data</title>
+    <link rel="stylesheet" href="layout.css" />
+    <script src="fetch.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="input_div">
+        <input type="text" id="inputText" onkeyup="handleTextInput()" />
+        <select name="filterSelect" id="filterSelect" onchange="handleSelect()">
+          <option>ROSNĄCO</option>
+          <option>MALEJĄCO</option>
+          <option>ORYGINALNA KOLEJNOŚĆ</option>
+        </select>
+      </div>
+      <table id="items_list">
+        <tr>
+          <th>ZDJĘCIE PRODUKTU</th>
+          <th>NAZWA</th>
+          <th>OPIS</th>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

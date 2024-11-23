@@ -1,0 +1,46 @@
+body {
+    background-color: rgb(200, 200, 200);
+}
+
+#container {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10vh;
+}
+
+#items_list {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#input_div {
+    display: flex;
+}
+
+input {
+    width: 96%;
+    margin-right: 4%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+select {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+tr {
+    border: 1px solid rgb(20, 20, 20);
+}
+
+td {
+    background-color: rgb(150, 150, 150);
+    text-align: justify;
+    padding: 10px;
+}
+
+th {
+    padding: 10px;
+    background-color: rgb(120, 120, 120);
+}
