@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(resources/board-bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: rgb(230, 230, 230);
+    cursor: url(resources/aim.png) 64 64, auto;
+}
+
+main {
+    height: 85vh;
+    max-height: 85vh;
+}
+
+#main_field {
+    height: 100%;
+    overflow: hidden;
+}
+
+#header_container {
+    display: flex;
+    justify-content: space-between;
+    height: 15vh;
+    padding: 20px;
+}
+
+#life_container {
+    display: flex;
+    gap: 20px;
+}
+
+#score_count {
+    font-size: 70px;
+    font-weight: bolder;
+    text-align: center;
+    vertical-align: middle;
+}
