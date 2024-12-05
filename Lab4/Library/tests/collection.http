@@ -1,0 +1,110 @@
+@hostname=127.0.0.1:3000
+
+###########################################
+# BOOKS HANDLING                          #
+###########################################
+# GET for service 1                       #
+###########################################
+get http://{{hostname}}/api/books
+###########################################
+get http://{{hostname}}/api/books/2
+###########################################
+get http://{{hostname}}/api/books/6
+###########################################
+# POST for service 1                      #
+###########################################
+post http://{{hostname}}/api/books
+Content-Type: application/json
+
+{
+    "BookName": "1984",
+    "BookAuthor": "Orwell",
+    "ReleaseDate": "1951-01-02"
+}
+###########################################
+post http://{{hostname}}/api/books
+Content-Type: application/json
+
+{
+    "BookName": "Baśniobór",
+    "BookAuthor": "Brandon Mull",
+    "ReleaseDate": "2008-08-11"
+}
+###########################################
+# DELETE for service 1                    #
+###########################################
+delete http://{{hostname}}/api/books/1
+
+###########################################
+# ORDERS HANDLING                         #
+###########################################
+# GET for service 2                       #
+###########################################
+get http://{{hostname}}/api/orders/2
+###########################################
+get http://{{hostname}}/api/orders/1
+###########################################
+get http://{{hostname}}/api/orders/11
+###########################################
+# POST for service 2                      #
+###########################################
+post http://{{hostname}}/api/orders
+Content-Type: application/json
+
+{
+    "UserID": 2,
+    "BookID": 3,
+    "Quantity": 2 
+}
+###########################################
+post http://{{hostname}}/api/orders 
+Content-Type: application/json
+
+{
+    "UserID": 11,
+    "BookID": 4,
+    "Quantity": 1
+}
+###########################################
+# DELETE for service 2                    #
+###########################################
+delete http://{{hostname}}/api/orders/3
+###########################################
+# PATCH for service 2                     #
+###########################################
+patch http://{{hostname}}/api/orders/2
+Content-Type: application/json
+
+{
+    "Quantity": 10
+}
+
+###########################################
+patch http://{{hostname}}/api/orders/3
+Content-Type: application/json
+
+{
+    "BookID": 11
+}
+
+###########################################
+# USERS HANDLING                          #
+###########################################
+# POST for service 3                      #
+###########################################
+post http://{{hostname}}/api/register
+Content-Type: application/json
+
+{
+    "UserMail": "adsuliga@student.agh.edu.pl",
+    "UserPassword": "jevbnuivbu"
+}
+
+###########################################
+post http://{{hostname}}/api/login
+Content-Type: application/json
+
+{
+    "UserMail": "adsuliga@student.agh.edu.pl",
+    "UserPassword": "jevbnuivbu"
+}
