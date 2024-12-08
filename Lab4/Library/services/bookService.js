@@ -1,10 +1,10 @@
 import express from 'express'
 import {Books} from '../app.js'
+import { authenticateToken } from './authToken.js';
 
 const router = express.Router();
 export default router;
 
-// HTTP logic
 router.get('/', (req, res) => {
     const books = Books.findAll();
     books.then ((books) => {
@@ -12,12 +12,16 @@ router.get('/', (req, res) => {
             return res.json(books);
         } else {
             res.status(404);
-            return res.json('No books found');
+            return res.json({
+                error: 'No books found'
+            });
         }
     })
-    .catch ((error) => {
+    .catch ((err) => {
         res.status(500);
-        return res.json('Error ', error);
+        return res.json({
+            error: err
+        });
     });
 });
 
@@ -32,16 +36,20 @@ router.get('/:id', (req, res) => {
             return res.json(book);
         } else {
             res.status(404);
-            return res.json('Book not found');
+            return res.json({
+                error: 'No books found'
+            });
         }
     })
-    .catch ((error) => {
+    .catch ((err) => {
         res.status(500);
-        return res.json('Error ', error);
+        return res.json({
+            error: err
+        });
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/', authenticateToken, (req, res) => {
     Books.create({
         BookName: req.body.BookName,
         BookAuthor: req.body.BookAuthor,
@@ -49,22 +57,24 @@ router.post('/', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', authenticateToken, (req, res) => {
     const destPromise = Books.destroy({
         where: {
             BookID: req.params.id,
         },
     });
     destPromise.then ((removedRows) => {
-        if (removedRows > 0) {
-            return res.json('Entries removed: ' + removedRows);
-        } else {
+        if (removedRows == 0) {
             res.status(404);
-            return res.json('Did not find any matching entry');
         }
+        return res.json({
+            removedEntries: removedRows
+        });
     })
-    .catch ((error) => {
+    .catch ((err) => {
         res.status(500);
-        return res.json('Error ', error);
+        return res.json({
+            error: err
+        });
     });
 });

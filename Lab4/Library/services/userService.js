@@ -1,10 +1,11 @@
 import express from 'express'
 import {Users} from '../app.js'
+import { authenticateToken } from './authToken.js';
 
 const router = express.Router();
 export default router;
 
-router.post('/register', (req, res) => {
+router.post('/register', authenticateToken, (req, res) => {
     const existingUser = Users.findOne({
         where: {
             UserMail: req.body.UserMail,
@@ -14,7 +15,7 @@ router.post('/register', (req, res) => {
 
     existingUser.then ((user) => {
         if (user !== null) {
-            return res.json('User already registered');
+            return res.json({info: 'user already registered'});
         } else {
             const newUser = Users.create({
                 UserMail: req.body.UserMail,
@@ -22,26 +23,26 @@ router.post('/register', (req, res) => {
             });
 
             newUser.then ((usr) => {
-                if (usr !== null) {
-                    return res.json(usr.UserID);
-                } else {
+                if (usr === null) {
                     res.status(500);
-                    return res.json('Failed to create new user');
+                    return res.json({error: 'failed to create new user'});
+                } else {
+                    return res.json(usr.UserID);
                 }
             })
-            .catch ((error) => {
+            .catch ((err) => {
                 res.status(500);
-                return res.json('Error ' + error);
+                return res.json({error: err});
             })
         }
     })
-    .catch ((error) => {
+    .catch ((err) => {
         res.status(500);
-        return res.json('Error while searching user database ' + error);
+        return res.json({error: err});
     })
 })
 
-router.post('/login', (req, res) => {
+router.post('/login', authenticateToken, (req, res) => {
     const existingUser = Users.findOne({
         where: {
             UserMail: req.body.UserMail
@@ -51,18 +52,18 @@ router.post('/login', (req, res) => {
     existingUser.then ((user) => {
         if (user === null) {
             res.status(404);
-            return res.json('User does not exist');
+            return res.json({error: 'user does not exist'});
         }
 
         if (req.body.UserPassword == user.UserPassword) {
-            return res.json('User successfully logged in');
+            return res.json({info: 'user successfully logged in'});
         } else {
             res.status(401);
-            return res.json('Wrong credentials');
+            return res.json({error: 'wrong credentials'});
         }
     })
-    .catch ((error) => {
+    .catch ((err) => {
         res.status(500);
-        res.send('Error ' + error);
+        res.send({error: err});
     })
 })

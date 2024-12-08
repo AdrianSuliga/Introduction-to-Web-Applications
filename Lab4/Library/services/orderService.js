@@ -1,5 +1,6 @@
 import express from 'express'
 import {Orders, Books} from '../app.js'
+import { authenticateToken } from './authToken.js';
 
 const router = express.Router();
 export default router;
@@ -14,17 +15,20 @@ router.get('/:id', (req, res) => {
         if (ords.length > 0) {
             return res.json(ords);
         } else {
-            res.status(404);
-            return res.json('No matching orders found');
+            return res.json({
+                info: 'User has no orders'
+            });
         }
     })
-    .catch ((error) => {
+    .catch ((err) => {
         res.status(500)
-        return res.json('Error while getting user orders, ' + error);
+        return res.json({
+            error: err
+        });
     });
 })
 
-router.post('/', (req, res) => {
+router.post('/', authenticateToken, (req, res) => {
     const book = Books.findOne({
         where: {
             BookID: req.body.BookID,
@@ -39,49 +43,44 @@ router.post('/', (req, res) => {
             });
 
             ord.then ((createdOrder) => {
-                if (createdOrder) {
+                if (createdOrder !== null) {
                     return res.json(createdOrder.OrderID);
                 } else {
                     res.status(500);
-                    return res.json('Failed to add new order');
+                    return res.json({error: 'Failed to add new order'});
                 }
             })
-            .catch ((error) => {
+            .catch ((err) => {
                 res.status(500);
-                return res.json('Error while adding new order ' + error);
+                return res.json({error: err});
             });
         } else {
             res.status(404);
-            return res.json('This book does not exist');
+            return res.json({error: 'This book does not exist'});
         }
     })
-    .catch ((error) => {
+    .catch ((err) => {
         res.status(500);
-        return res.json('Error occured while searching for book ' + error);
+        return res.json({error: err});
     });
 })
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', authenticateToken, (req, res) => {
     const destPromise = Orders.destroy({
         where: {
             OrderID: req.params.id,
         },
     });
     destPromise.then ((removedRows) => {
-        if (removedRows > 0) {
-            return res.json('Entries removed: ' + removedRows);
-        } else {
-            res.status(404);
-            return res.json('Did not find any matching entries');
-        }
+        return res.json({entriesRemoved: removedRows});
     })
-    .catch ((error) => {
+    .catch ((err) => {
         res.status(500);
-        return res.json('Error ' + error);
+        return res.json({error: err});
     })
 })
 
-router.patch('/:id', (req, res) => {
+router.patch('/:id', authenticateToken, (req, res) => {
     const ord = Orders.findOne({
         where: {
             OrderID: req.params.id,
@@ -89,7 +88,11 @@ router.patch('/:id', (req, res) => {
     });
 
     ord.then ((order) => {
-        if (order !== null)
+        if (order === null) {
+            res.status(404);
+            return res.json({error: 'order with this id does not exist'});
+        }
+
         if ("UserID" in req.body) {
             order.UserID = req.body.UserID;
         }
@@ -103,9 +106,10 @@ router.patch('/:id', (req, res) => {
         }
 
         order.save();
+        return res.json({info: 'order patched'});
     })
-    .catch ((error) => {
+    .catch ((err) => {
         res.status(500);
-        return res.json('Error ' + error);
+        return res.json({error: err});
     })
 })
