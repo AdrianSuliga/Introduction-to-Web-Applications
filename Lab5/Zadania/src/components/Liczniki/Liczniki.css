@@ -1,0 +1,14 @@
+#ex_2_1,
+#ex_2_2 {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+#ex_2_1 > button,
+#ex_2_2 > button {
+  width: 80px;
+  height: 40px;
+  margin-top: auto;
+  margin-bottom: auto;
+}

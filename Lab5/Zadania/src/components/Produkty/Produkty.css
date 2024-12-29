@@ -1,0 +1,40 @@
+#ex_7_1 {
+  font-size: 30px;
+}
+
+#likes {
+  display: flex;
+  justify-content: left;
+  gap: 15px;
+}
+
+p {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#like_button,
+#dislike_button {
+  border: none;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(60, 60, 60);
+}
+
+#like_button:hover,
+#dislike_button:hover {
+  border: none;
+}
+
+#id_info {
+  font-size: 20px;
+}
+
+#user_info {
+  font-size: 20px;
+}
