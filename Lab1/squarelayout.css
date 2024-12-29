@@ -1,0 +1,36 @@
+.square {
+    width: 100px;
+    min-width: 100px;
+    height: 100px;
+    min-height: 100px;
+    margin: 5px;
+}
+
+body {
+    background-color: rgb(30, 30, 30);
+    color: rgb(230, 230, 230);
+}
+
+#sq_container_1 {
+    display: flex;
+}
+
+#sq1 {
+    background-color: rgb(255, 0, 255);
+}
+
+#sq2 {
+    background-color: rgb(255, 0, 150);
+}
+
+#sq_container_2 {
+    display: flex;
+}
+
+#sq3 {
+    background-color: rgb(255, 0, 50);
+}
+
+#sq4 {
+    background-color: rgb(255, 0, 0);
+}
