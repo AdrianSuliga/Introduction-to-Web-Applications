@@ -1,32 +1,27 @@
+import { Link } from "react-router-dom";
 import ArticleLink from "./ArticleLink";
 import "./home.css";
 
-interface ArticleData {
+export interface ArticleData {
   id: number;
   title: string;
   content: string;
 }
 
 function BlogPage() {
+  let articles: ArticleData[] = JSON.parse(
+    localStorage.getItem("articles") || "[]"
+  );
+
+  let articleLinkTags = articles.map((art) => <ArticleLink data={art} />);
+
   return (
     <div id="blog_main">
       <h1>Welcome to my blog!</h1>
-      <ArticleLink
-        id={0}
-        title="In vehicula augue risus, non dignissim turpis aliquam. "
-      />
-      <ArticleLink
-        id={1}
-        title="Ut mattis urna est, ut convallis tellus ullamcorper. "
-      />
-      <ArticleLink
-        id={2}
-        title="Proin in porta mauris. Phasellus odio est, blandit. "
-      />
-      <ArticleLink
-        id={3}
-        title="Maecenas pretium maximus commodo. Praesent tristique ultricies scelerisque."
-      />
+      {articleLinkTags}
+      <Link id="add_button" to="/dodaj">
+        Dodaj
+      </Link>
     </div>
   );
 }

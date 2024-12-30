@@ -1,19 +1,12 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function ArticleLink(props: any) {
-  const navigate = useNavigate();
-  let tail = String(props.id);
-
-  function handleClick() {
-    navigate("/article/" + tail);
-  }
-
   return (
-    <div id="article_link" onClick={handleClick}>
+    <Link to={"/article/" + props.data.id} id="article_link">
       <h1>
-        #{props.id} {props.title}
+        #{props.data.id} {props.data.title}
       </h1>
-    </div>
+    </Link>
   );
 }
 
