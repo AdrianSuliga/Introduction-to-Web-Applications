@@ -2,12 +2,16 @@ import { useState } from "react";
 import "./Formularze.css";
 
 function Logowanie() {
-  const [LoginCred, setLoginCred] = useState({
+  const [LoginCred, setLoginCred] = useState<{
+    usrName: string;
+    fstPassword: string;
+    sndPassword: string;
+  }>({
     usrName: "",
     fstPassword: "",
     sndPassword: "",
   });
-  const [ButtonState, setButtonState] = useState(true);
+  const [ButtonState, setButtonState] = useState<boolean>(true);
 
   function handleChange(item: any) {
     const { name, value } = item.target;
@@ -16,11 +20,13 @@ function Logowanie() {
       [name]: value,
     }));
 
-    if (
-      LoginCred.usrName === "" ||
-      LoginCred.fstPassword === "" ||
-      LoginCred.sndPassword === ""
-    ) {
+    const actualUsrName = name === "usrName" ? value : LoginCred.usrName;
+    const actualFstPswd =
+      name === "fstPassword" ? value : LoginCred.fstPassword;
+    const actualSndPswd =
+      name === "sndPassword" ? value : LoginCred.sndPassword;
+
+    if (actualUsrName === "" || actualFstPswd === "" || actualSndPswd === "") {
       setButtonState(true);
     } else {
       setButtonState(false);

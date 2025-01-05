@@ -7,7 +7,7 @@ function Licznik() {
     init_val = "0";
   }
 
-  const [Clicks, setClicks] = useState(Number(init_val));
+  const [Clicks, setClicks] = useState<number>(Number(init_val));
 
   function handleClick() {
     setClicks(Clicks + 1);

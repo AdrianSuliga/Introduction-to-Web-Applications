@@ -1,9 +1,10 @@
 import { useState } from "react";
 import "./Studenci.css";
 import Dodawanie from "./Dodawanie";
+import { Student } from "./Studenci";
 
 function StudentManager() {
-  const [Students, setStudents] = useState([
+  const [Students, setStudents] = useState<Student[]>([
     {
       name: "Adrian",
       surname: "Suliga",
@@ -22,7 +23,6 @@ function StudentManager() {
   ]);
 
   function handleChange(newStudent: any) {
-    console.log(newStudent.name, newStudent.surname, newStudent.year);
     setStudents((prev) => [...prev, newStudent]);
   }
 

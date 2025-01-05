@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { Student } from "./Studenci";
 
 function Dodawanie(props: any) {
-  const [NewStudent, setNewStudent] = useState({
+  const [NewStudent, setNewStudent] = useState<Student>({
     name: "",
     surname: "",
-    year: "",
+    year: 2000,
   });
 
   function addHandler(event: any) {
@@ -22,9 +23,9 @@ function Dodawanie(props: any) {
     }
 
     if (
-      isNaN(Number(NewStudent.year)) ||
-      Number(NewStudent.year) < 1900 ||
-      Number(NewStudent.year) > 2025
+      isNaN(NewStudent.year) ||
+      NewStudent.year < 1900 ||
+      NewStudent.year > 2025
     ) {
       alert("Proszę wprowadzić właściwy rok");
       return;
@@ -34,7 +35,7 @@ function Dodawanie(props: any) {
     setNewStudent({
       name: "",
       surname: "",
-      year: "",
+      year: 2000,
     });
   }
 

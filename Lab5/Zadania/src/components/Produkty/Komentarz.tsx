@@ -6,9 +6,9 @@ import dislike_un from "./resources/dislike_un.png";
 import dislike_cl from "./resources/dislike_cl.png";
 
 function Komentarz(props: any) {
-  const [LikeSrc, setLikeSrc] = useState(like_un);
-  const [DislikeSrc, setDislikeSrc] = useState(dislike_un);
-  const [LikeCount, setLikeCount] = useState(Number(props.post.likes));
+  const [LikeSrc, setLikeSrc] = useState<string>(like_un);
+  const [DislikeSrc, setDislikeSrc] = useState<string>(dislike_un);
+  const [LikeCount, setLikeCount] = useState<number>(Number(props.post.likes));
 
   function likeHandler() {
     if (DislikeSrc === dislike_cl) {

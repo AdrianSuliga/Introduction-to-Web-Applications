@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function Aktualizacja() {
-  const [product, setProduct] = useState({
+  const [product, setProduct] = useState<{ nazwa: string; cena: number }>({
     nazwa: "Pomidor",
     cena: 50,
   });

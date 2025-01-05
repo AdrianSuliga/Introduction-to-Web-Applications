@@ -4,8 +4,16 @@ function Ternary() {
 
   return (
     <div id="ex_4_1" className="main_class">
-      {a ? <div>a jest prawdziwe</div> : <div>a jest fałszywe</div>}
-      {b ? <div>b jest prawdziwe</div> : <div>b jest fałszywe</div>}
+      {a ? (
+        <div>Stwierdzenie a jest prawdziwe</div>
+      ) : (
+        <div>Stwierdzenie a jest fałszywe</div>
+      )}
+      {b ? (
+        <div>Stwierdzenie b jest prawdziwe</div>
+      ) : (
+        <div>Stwierdzenie b jest fałszywe</div>
+      )}
     </div>
   );
 }

@@ -3,7 +3,10 @@ import { ArticleData } from "./BlogPage";
 import { useNavigate } from "react-router-dom";
 
 function Dodaj() {
-  const [NewArticleData, setNewArticleData] = useState({
+  const [NewArticleData, setNewArticleData] = useState<{
+    newTitle: string;
+    newContent: string;
+  }>({
     newTitle: "",
     newContent: "",
   });

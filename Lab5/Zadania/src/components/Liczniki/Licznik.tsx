@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./Liczniki.css";
 
 function Licznik() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState<number>(0);
 
   return (
     <>

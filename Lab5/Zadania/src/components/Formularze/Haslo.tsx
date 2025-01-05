@@ -2,10 +2,14 @@ import { useState } from "react";
 import "./Formularze.css";
 
 function Haslo() {
-  const [password, setPassword] = useState({
+  const [password, setPassword] = useState<{
+    fstPassword: string;
+    sndPassword: string;
+  }>({
     fstPassword: "",
     sndPassword: "",
   });
+  const [message, setMessage] = useState<string>("Proszę wprowadzić hasło");
 
   function handleChange(item: any) {
     const { name, value } = item.target;
@@ -13,18 +17,18 @@ function Haslo() {
       ...prev,
       [name]: value,
     }));
-  }
 
-  function passwordInfo() {
-    if (
-      password.fstPassword.length === 0 &&
-      password.sndPassword.length === 0
-    ) {
-      return "Proszę wprowadzić hasło";
-    } else if (password.fstPassword !== password.sndPassword) {
-      return "Hasła nie są zgodne";
+    const actualFstPassword =
+      name === "fstPassword" ? value : password.fstPassword;
+    const actualSndPassword =
+      name === "sndPassword" ? value : password.sndPassword;
+
+    if (actualFstPassword.length === 0 && actualSndPassword.length === 0) {
+      setMessage("Proszę wprowadzić hasło");
+    } else if (actualFstPassword !== actualSndPassword) {
+      setMessage("Hasła nie są identyczne");
     } else {
-      return "";
+      setMessage("");
     }
   }
 
@@ -45,7 +49,7 @@ function Haslo() {
         value={password.sndPassword}
         onChange={handleChange}
       />
-      <div>{passwordInfo()}</div>
+      <div>{message}</div>
     </div>
   );
 }

@@ -33,7 +33,7 @@ function App() {
       <Tytul />
       <Odliczanie />
       <Komentarz
-        user={{ id: 12, username: "emac", fullName: "Emma Watson" }}
+        user={{ id: "12", username: "emac", fullName: "Emma Watson" }}
         post={{
           id: "1",
           postId: "123",

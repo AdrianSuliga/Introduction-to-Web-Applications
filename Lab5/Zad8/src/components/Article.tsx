@@ -3,7 +3,7 @@ import { ArticleData } from "./BlogPage";
 
 function Article() {
   const { id } = useParams();
-  const thisId = parseInt(id || "0", 10);
+  const thisId: number = parseInt(id || "0", 10);
   const articles: readonly ArticleData[] = JSON.parse(
     localStorage.getItem("articles") || "[]"
   );

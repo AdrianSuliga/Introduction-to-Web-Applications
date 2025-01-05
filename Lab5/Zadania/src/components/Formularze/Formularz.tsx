@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./Formularze.css";
 
 function Formularz() {
-  const [text, setText] = useState("");
+  const [text, setText] = useState<string>("");
 
   function inputHandler(item: any) {
     setText(item.target.value);

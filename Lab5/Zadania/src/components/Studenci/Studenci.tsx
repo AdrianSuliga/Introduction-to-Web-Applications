@@ -1,13 +1,13 @@
 import "./Studenci.css";
 
-interface Student {
+export interface Student {
   name: string;
   surname: string;
   year: number;
 }
 
 function Studenci() {
-  let Students: readonly Student[] = [
+  const Students: Student[] = [
     {
       name: "Adrian",
       surname: "Suliga",

@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import "./Efekty.css";
 
 function Odliczanie() {
-  const [IsActive, setIsActive] = useState(false);
-  const [IsDisabled, setIsDisabled] = useState(false);
-  const [Licznik, setLicznik] = useState("15.0");
-  const [ButtonState, setButtonState] = useState("START");
+  const [IsActive, setIsActive] = useState<boolean>(false);
+  const [IsDisabled, setIsDisabled] = useState<boolean>(false);
+  const [Licznik, setLicznik] = useState<string>("15.0");
+  const [ButtonState, setButtonState] = useState<string>("START");
 
   useEffect(() => {
     let interval: number;

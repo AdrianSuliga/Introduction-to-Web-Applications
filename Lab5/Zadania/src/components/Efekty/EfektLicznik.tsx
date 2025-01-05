@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function EfektLicznik() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState<number>(0);
 
   useEffect(() => {
     console.log("Hello world");
